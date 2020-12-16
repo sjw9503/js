@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<script>
+    window.onload = function () {
+        var btn = document.getElementById("countbtn");
+
+        countbtn.onclick = function () {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("counter").innerHTML = "현재 카운터 횟수 : " + localStorage.clickcount + "이다.";
+            } else {
+                document.getElementById("counter").innerHTML = "error";
+            }
+        }
+        clearbtn.onclick = function () {
+            localStorage.clear();
+        }
+    };
+</script>
+
+<body>
+    <button id="countbtn">up</button>
+    <button id="clearbtn">clear</button>
+</body>
+
+</html>

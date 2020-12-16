@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function process() {
+            var id = document.getElementById("mid").value;
+            var patt = new RegExp("^[a-zA-Z][0-9a-zA-Z]{4,7}$");
+            if (patt.test(id)) {
+                alert("성공");
+            } else {
+                alert("다시");
+                document.getElementById("mid").value = "";
+            }
+        }
+
+        function process2() {
+            var date = document.getElementById("hire_date").value;
+            var patt = new RegExp("^[0-9]{4}\-(0[1-9]|1[012])\-(0[1-9]|1[0-9|2[0-9|3[01])$");
+
+            if (patt.test(date)) {
+                alert("nice");
+            } else {
+                alert("sad");
+            }
+        }
+    </script>
+    <label for="">아이디</label>
+    <input type="text" name="mid" id="mid">
+    <input type="button" value="commit" onclick="process()">
+    <hr>
+
+    <input type="text" name="hire_date" id="hire_date">
+    <input type="button" value="commit" onclick="process2()">
+
+</body>
+
+</html>

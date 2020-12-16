@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scriptTest01</title>
+</head>
+<body>
+    <script>
+        function choice(){
+            var size = document.getElementsByName("check").length;
+            var text = "내가 좋아하는 과일은 &nbsp;";
+            for( var i = 0; i < size; i++){
+                if(document.getElementsByName("check")[i].checked == true){
+                    text += (document.getElementsByName("check")[i].value);
+                    text += "&nbsp;&nbsp;";
+                }
+            }
+            text += "입니다.";
+            document.getElementById("demo").innerHTML=text;
+        }
+
+        function choice2(){
+            var x = document.getElementsByTagName("li");
+            var text ="";
+            for(i=0; i<x.length; i++){
+                text += x[i].innerHTML;
+                text += "&nbsp;&nbsp;";
+            }
+            document.getElementById("demo2").innerHTML = text;
+        }
+    </script>
+    선택
+    <input type="button" onclick="choice()" value="선택"> <br>
+    <input type="checkbox" name="check" value="c">c<br>
+    <input type="checkbox" name="check" value="b">b<br>
+    <input type="checkbox" name="check" value="a">a<br><br>
+
+    <hr>
+
+    <button onclick="choice2()">선택</button><br>
+    <ul>
+        <li>aa</li>
+        <li>bb</li>
+        <li>cc</li>
+    </ul>
+<hr>
+    <div id="demo"></div>
+
+    <hr>
+    <div id="demo2"></div>
+</body>
+</html>

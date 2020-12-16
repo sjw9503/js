@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apiTest01</title>
+</head>
+<style>
+    img{ width: 100px;}
+</style>
+<body>
+    <script>
+        function allowDrop(ev){
+            ev.preventDefault();
+        }
+        function drad(ev){
+            ev.dataTransfer.setData("text",ev.target.id);
+        }
+        function drop(ev){
+            ev.preventDefault.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <p>카트에 삼품담기</p>
+    <div id="shopping_cart" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+    <img src="./apiTest01Img/a1.jpg" alt="" id="img1" draggable="true" ondragstart="drag(event)">
+    <img src="./apiTest01Img/a2.jpg" alt="" id="img2" draggable="true" ondragstart="drag(event)">
+    <img src="./apiTest01Img/a3.jpg" alt="" id="img3" draggable="true" ondragstart="drag(event)">
+    <img src="./apiTest01Img/a4.jpg" alt="" id="img4" draggable="true" ondragstart="drag(event)">
+    <img src="./apiTest01Img/a5.jpg" alt="" id="img5" draggable="true" ondragstart="drag(event)">
+    <img src="./apiTest01Img/a6.jpg" alt="" id="img6" draggable="true" ondragstart="drag(event)">
+</body>
+</html>

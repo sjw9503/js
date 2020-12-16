@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup + slide</title>
+</head>
+<body>
+    <div id="clear"></div>
+
+    <div id="back"></div>
+
+    <div id="popup">
+        <div class="title">SandArt Popup 
+            <span class="close" onclick="closePopup()">
+                &times;
+            </span>
+        </div>
+        <div class="large" >
+            <div class="small">
+                <img src="" alt="" class="mySlides">
+                <img src="" alt="" class="mySlides">
+                <img src="" alt="" class="mySlides">
+
+                <a href="" onclick="plusDivs(-1)" class="leftbtn">left</a>
+                <a href="" onclick="plusDivs(1)" class="rightbtn">right</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var slideIndex=0;
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+        function showDivs(n){
+            var i ;
+            slideIndex = n;
+            var x = document.getElementsByClassName("mySlides");
+            if(n>x.length){
+                slideIndex = 1 
+            }if(n< 1){
+                slideIndex = x.length
+            };
+            for(i=0;i<x.length;i++){
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+            document.getElementById("back").style.display = "none";
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

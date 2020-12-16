@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessonStorage</title>
+</head>
+<body>
+    <div id="dounter"></div>
+    <button onclick="clickGrowth()"> up </button>
+
+    <script>
+        function clickGrowth(){
+            if(typeof(Storage) != "undefined"){
+                if(sessionStorage.clickcount){
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                }else{
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("counter").innerHTML = "counter 현재 횟수 : " +  sessionStorage.clickcount + "이다." ;
+            }else{
+                document.getElementById("counter").innerHTML = " error ";
+            }
+        }
+    </script>
+</body>
+</html>
